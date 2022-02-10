@@ -1,0 +1,21 @@
+#+TITLE: SaveLink
+#+DESCRIPTION: Simple program to save a link in a file
+
+
+* Installation
+#+begin_src sh
+# Install rust toolchain
+# Unix
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Arch
+pacman -S rustup
+
+# Compile
+git clone https://github.com/rdixitv/SaveLink
+cd SaveLink
+cargo build
+
+# Optional: link binary to .local/bin (in PATH)
+ln -s target/debug/linksaver $HOME/.local/bin/linksaver
+#+end_src
