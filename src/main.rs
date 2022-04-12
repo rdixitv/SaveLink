@@ -1,16 +1,15 @@
-use std::{env, fs::File, io::prelude::*, path::Path};
+use std::{
+    env,
+    fs::File,
+    io::prelude::*,
+    path::Path
+};
 
 fn write_to_file() {
-    let path = Path::new("link.txt");
-    let contents = path.display();
-    let args: Vec<String> = env::args().collect();
+    let path = Path::new("link.txt"); // Complete path
+    let contents = path.display(); // Filename
+    let args: Vec<String> = env::args().collect(); // Get command line arguments
 
-//    print!("\nEnter link: ");
-
-/*    let mut input = String::new();
-    std::io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line"); */
 
     let mut file = match File::create(&path) {
         Err(why) => panic!("Couldn't create {}: {}", contents, why),
@@ -24,6 +23,7 @@ fn write_to_file() {
 
 }
 
+// Read from file
 fn get_link<P>(filename: P) -> std::io::Result<std::io::Lines<std::io::BufReader<File>>> where P: AsRef<Path>, {
     let file = File::open(filename)?;
     Ok(std::io::BufReader::new(file).lines())

@@ -19,3 +19,7 @@ cargo build
 # Optional: link binary to .local/bin (in PATH)
 ln -s target/debug/linksaver $HOME/.local/bin/linksaver
 #+end_src
+* Usage
+- write/add/--new/-n: Write the given link to file
+- read/get/-g/--get: Display link saved in file
+- help/-h/--help: Show help information
